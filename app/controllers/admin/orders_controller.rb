@@ -10,6 +10,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def show
+    @product_lists = @order.product_lists
   end
 
   def ship
@@ -18,11 +19,11 @@ class Admin::OrdersController < ApplicationController
   end
 
   def shipped
-    @order.delivery!
+    @order.deliver!
     redirect_to :back
   end
 
-  def cancel!
+  def cancel
     @order.cancel_order!
     redirect_to :back
   end
