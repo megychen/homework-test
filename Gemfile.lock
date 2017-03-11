@@ -54,6 +54,9 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
+    bullet (5.5.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.0.5)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
@@ -125,6 +128,8 @@ GEM
     public_suffix (2.0.5)
     puma (3.6.0)
     rack (2.0.1)
+    rack-mini-profiler (0.10.2)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0)
@@ -185,6 +190,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
+    uniform_notifier (1.10.0)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.3.1)
@@ -203,6 +209,7 @@ DEPENDENCIES
   aasm
   awesome_rails_console
   bootstrap-sass
+  bullet
   byebug
   carrierwave
   coffee-rails (~> 4.2)
@@ -215,6 +222,7 @@ DEPENDENCIES
   mini_magick
   pg
   puma (~> 3.0)
+  rack-mini-profiler
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
   simple_form

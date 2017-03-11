@@ -1,7 +1,4 @@
-class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin_required
-  layout "admin"
+class Admin::ProductsController < AdminController
 
   def index
     @products = Product.all
@@ -31,7 +28,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to admin_products_path, notice: "Update Success"
+      redirect_to admin_products_path
     else
       render :edit
     end
@@ -40,7 +37,6 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    flash[:alert] = "Product Deleted"
     redirect_to admin_products_path
   end
 
